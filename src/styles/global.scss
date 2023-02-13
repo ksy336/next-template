@@ -32,15 +32,15 @@ body {
 }
 
 .light {
-  --text-color: #1e1e1e;
+  --text-color: #333;
   --background: #fff;
-  --primary: #fc539a;
+  --primary: green;
 }
 
 .dark {
-  --text-color: #1e1e1e;
-  --background: #fff;
-  --primary: #fc539a;
+  --text-color: #fff;
+  --background: #333;
+  --primary: green;
 }
 .container {
   @include container;
