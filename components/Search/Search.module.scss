@@ -1,0 +1,18 @@
+@import "src/styles/mixins";
+
+.search {
+  @include fluid(width, 200px, 300px);
+}
+.mySearch {
+  @include fluid(width, 300px, 580px);
+  button {
+    display: none;
+  }
+}
+.input {
+  border: 1px solid #E8E8E8;
+  border-radius: 20px;
+  @include fluid(padding-left, 8px, 18px);
+  @include fluid(padding-right, 15px, 25px);
+
+}
