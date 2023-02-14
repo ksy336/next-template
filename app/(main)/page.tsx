@@ -4,6 +4,10 @@ import { TemplateComponent } from "@/modules/Template/Components/TemplateCompone
 import { Title } from "@/components/ui/Title/Title";
 import { IconBasket } from "@/components/ui/IconBasket";
 
+export const metadata = {
+  title: "Home",
+  description: "Welcome to Next.js",
+};
 export default async function Page() {
   return (
     <>
