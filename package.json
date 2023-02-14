@@ -9,9 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "g": "generate-react component",
-    "start serv": "node server.js",
-    "pre": "npx husky add husky/pre-commit 'npx lint-staged'",
-    "prepare": "husky install"
+    "start serv": "node server.js"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
