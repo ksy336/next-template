@@ -3,8 +3,10 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  compiler: {
+    removeConsole: true,
+  },
   reactStrictMode: false,
-  swcMinify: true,
   images: {
     domains: ['gamplove.joytech.store'],
     remotePatterns: [
