@@ -26,7 +26,7 @@
 }
 
 .light {
-  --size: 2rem;
+  @include fluid(--size, 20px, 30px);
   appearance: none;
   outline: none;
   cursor: pointer;
