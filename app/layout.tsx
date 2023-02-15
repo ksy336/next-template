@@ -1,26 +1,25 @@
 import localFont from "@next/font/local";
 import '@/src/styles/global.scss';
 import ClientProdider from "@/modules/ClientProdider";
-
 const gilroy = localFont({
     src: [
         {
-            path: './../src/fonts/Gilroy-Light.woff',
+            path: './../public/fonts/Gilroy-Light.woff',
             weight: '300',
             style: 'normal',
         },
         {
-            path: './../src/fonts/Gilroy-Regular.woff',
+            path: './../public/fonts/Gilroy-Regular.woff',
             weight: '400',
             style: 'normal',
         },
         {
-            path: './../src/fonts/Gilroy-Bold.woff',
+            path: './../public/fonts/Gilroy-Bold.woff',
             weight: '700',
             style: 'normal',
         },
         {
-            path: './../src/fonts/Gilroy-Medium.woff',
+            path: './../public/fonts/Gilroy-Medium.woff',
             weight: '500',
             style: 'normal',
         },

@@ -34,6 +34,7 @@ body {
 .container {
   @include container;
 }
+
 //код для скелетонов
 @layer components {
   .sk-wrapper {
@@ -50,6 +51,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
 .content {
   flex-grow: 1;
 }
