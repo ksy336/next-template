@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 
 export const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
+
   return (
     <div
       className={s.wrapper}
