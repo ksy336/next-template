@@ -5,7 +5,7 @@ import {ThemeProvider} from "next-themes";
 import "swiper/css";
 import "swiper/scss/pagination";
 import "swiper/scss/navigation";
-function App({children}: { children: React.ReactNode }) {
+function ClientProvider({children}: { children: React.ReactNode }) {
     return (
         <ThemeProvider enableSystem={false} attribute="class">
             <AntdThemeProvider>
@@ -15,4 +15,4 @@ function App({children}: { children: React.ReactNode }) {
     )
 }
 
-export default App;
+export default ClientProvider;

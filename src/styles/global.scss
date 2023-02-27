@@ -15,6 +15,18 @@
   }
 }
 
+.light {
+  --text-color: #333;
+  --background: #fff;
+  --primary: green;
+}
+
+.dark {
+  --text-color: #fff;
+  --background: #333;
+  --primary: green;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
