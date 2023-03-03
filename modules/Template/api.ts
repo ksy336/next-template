@@ -1,30 +1,35 @@
-import {customNotification} from "@/src/helpers/customNotification";
-import {PostReq, Template} from "@/modules/Template/types";
+const BASE_URL = process.env.APP_BASE_URL;
 
-export const postSWRReq = async (url: string, {arg}:PostReq) => {
-    const res = await fetch(url, {
-        method: 'post',
-        headers: {
-            "Content-type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify(arg)
-    })
-    if (res.ok) {
-        customNotification('success', 'top', 'Регистраия', 'прошла успешно')
+class ProductsService {
+    async getAllProducts(): Promise<IProduct[]> {
+        const response = await fetch(`${BASE_URL}/products`, {
+                method: "GET",
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8",
+                }
+            }
+            );
+        try {
+            return await response.json()
+        } catch(e) {
+            console.warn(e);
+            throw new Error();
+        }
     }
-    if (!res.ok) {
-        const text = await res.json()
-        customNotification('info', 'top', 'Внимание', text.error)
+    async getSingleProduct(id: any): Promise<IProduct> {
+        const response = await fetch(`${BASE_URL}/products/${id}`, {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            }
+        }, );
+        try {
+            return await response.json()
+        } catch(e) {
+            console.warn(e);
+            throw new Error();
+        }
     }
 }
-
-export const getReq = async (url = 'url'):Promise<Template> => {
-    const res = await fetch(url, {
-        method: "get",
-        headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            Authorization: `Bearer`,
-        },
-    })
-    return res.json()
-}
+const productsService = new ProductsService();
+export default productsService;

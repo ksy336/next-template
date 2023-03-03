@@ -12,4 +12,12 @@ road map
 
 Изучить для работы
 
-1)https://beta.nextjs.org/docs 2)https://github.com/remarkablemark/html-react-parser 3)https://github.com/Gamote/lottie-react 4)https://www.react-spring.dev/ 5)https://transform.tools/json-to-typescript 6)https://www.npmjs.com/package/cookies-next 7)https://github.com/pmndrs/zustand 8)https://swr.vercel.app/docs/getting-started 9)https://github.com/okonet/lint-staged
+1)https://beta.nextjs.org/docs
+ 2)https://github.com/remarkablemark/html-react-parser 
+ 3)https://github.com/Gamote/lottie-react 
+ 4)https://www.react-spring.dev/ 
+ 5)https://transform.tools/json-to-typescript 
+ 6)https://www.npmjs.com/package/cookies-next 
+ 7)https://github.com/pmndrs/zustand 
+ 8)https://swr.vercel.app/docs/getting-started 
+ 9)https://github.com/okonet/lint-staged

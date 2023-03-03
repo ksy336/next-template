@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import '@/src/styles/global.scss';
 import {Metadata} from "next";
-import ClientProvider from "@/modules/ClientProdider";
+import ClientProvider from "@/modules/ClientProvider";
 
 
 const gilroy = localFont({

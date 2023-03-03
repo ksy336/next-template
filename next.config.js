@@ -10,7 +10,8 @@ const nextConfig = {
     // },
     reactStrictMode: false,
     images: {
-        domains: ['gamplove.joytech.store'],
+        // domains: ['gamplove.joytech.store'],
+        domains: ['server.js'],
         remotePatterns: [
             {
                 // The `src` property hostname must end with `.example.com`,
