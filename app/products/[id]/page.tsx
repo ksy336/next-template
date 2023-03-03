@@ -1,6 +1,5 @@
 import Router, { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
-import productsService from '@/api/products-service/products-service';
+import { useContext } from 'react';
 import { IProduct } from '@/components/Cards/Cards-types';
 import Cart from '@/components/Cart/Cart';
 import MainLayout from '@/components/Layout/MainLayout';
@@ -10,22 +9,14 @@ import Footer from '@/components/Footer/Footer';
 import FooterBottom from '@/components/FooterBottom/FooterBottom';
 import classes from '@/styles/shopping-cart.module.scss';
 import { Context } from '@/store/context';
+import productsService from "@/modules/Template/api";
 
-export default function Product() {
-    const [carts, setCarts] = useState<IProduct[]>([]);
-    // @ts-ignore
-    const { cartItems } = useContext(Context);
+export default async function IdPage() {
     const router = useRouter();
     const id = router.query.id;
-    useEffect(() => {
-        getSingleCart();
-    }, [id]);
-
-    const getSingleCart = async () => {
-        const data = await productsService.getSingleProduct(id);
-        // @ts-ignore
-        setCarts(() => [data]);
-    };
+    const carts = await productsService.getSingleProduct(id);
+    // @ts-ignore
+    const { cartItems } = useContext(Context);
 
     const goLinkHome = () => {
         Router.push('/products');
@@ -53,9 +44,4 @@ export default function Product() {
         </div>
     );
 }
-Product.getServerSideProps = async (context: any) => {
-    const { id } = context?.query;
-    console.log(id);
-    const response = await productsService.getSingleProduct(id);
-    return { response };
-};
+

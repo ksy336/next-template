@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { IProduct } from '@/components/Cards/Cards-types';
-import useLocalStorage from '@/customHooks/useLocalStorage';
 type ContextType = {
   children: React.ReactNode;
 };
