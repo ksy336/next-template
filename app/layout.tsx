@@ -1,11 +1,8 @@
-import localFont from "next/font/local";
-import '@/src/styles/global.scss';
+import '@/src/styles/globals.scss';
 import {Metadata} from "next";
 import ClientProvider from "@/modules/ClientProvider";
 import React from "react";
 import MainLayout from "@/components/Layout/MainLayout";
-
-
 
 export const metadata: Metadata = {
     title: 'template',

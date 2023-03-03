@@ -11,7 +11,7 @@ const nextConfig = {
     reactStrictMode: false,
     images: {
         // domains: ['gamplove.joytech.store'],
-        domains: ['server.js'],
+        domains: ['fakestoreapi.com'],
         remotePatterns: [
             {
                 // The `src` property hostname must end with `.example.com`,

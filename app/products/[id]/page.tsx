@@ -1,6 +1,6 @@
 import Router, { useRouter } from 'next/router';
 import { useContext } from 'react';
-import { IProduct } from '@/components/Cards/Cards-types';
+import { IProduct } from '@/modules/Cards/Cards-types';
 import Cart from '@/components/Cart/Cart';
 import MainLayout from '@/components/Layout/MainLayout';
 import Head from 'next/head';

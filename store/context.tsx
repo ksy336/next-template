@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IProduct } from '@/components/Cards/Cards-types';
+import { IProduct } from '@/modules/Cards/Cards-types';
 type ContextType = {
   children: React.ReactNode;
 };

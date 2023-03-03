@@ -1,10 +1,11 @@
-import Card from '@/components/Card/Card';
+"use client";
 import Image from 'next/image';
-import { IProduct } from '@/components/Cards/Cards-types';
+import { IProduct } from '@/modules/Cards/Cards-types';
 import classes from './Cards.module.scss';
 import arrow from '../../public/arrow.svg';
 import photo from '../../public/banner 1.png';
 import banner from '../../public/banner 2.png';
+import Card from "../Card/Card";
 
 type InitialProps = {
   products: IProduct[];

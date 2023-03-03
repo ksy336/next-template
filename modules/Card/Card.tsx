@@ -1,17 +1,17 @@
+"use client";
 import { useContext } from 'react';
 import Router from 'next/router';
 import Image from 'next/image';
-import { IProduct } from '@/components/Cards/Cards-types';
+import { IProduct } from '@/modules/Cards/Cards-types';
 import StarRating from '@/components/StarRating/StarRating';
 import FavoritesSign from '@/components/FavoritesSign/FavoritesSign';
 import classes from './Card.module.scss';
-import ButtonToCart from '@/components/ButtonToCart/ButtonToCart';
-import ButtonInCart from '@/components/ButtonInCart/ButtonInCart';
 import CountProducts from '@/components/CountProducts/CountProducts';
 import hit from '../../public/hit.png';
-
 import { Context } from '@/store/context';
 import openNotification from "@/src/helpers/notification";
+import ButtonToCart from "@/components/ui/ButtonToCart/ButtonToCart";
+import ButtonInCart from "@/components/ui/ButtonInCart/ButtonInCart";
 
 type InitialPropsForProduct = {
   product: IProduct;

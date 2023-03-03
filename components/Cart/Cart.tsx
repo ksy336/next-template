@@ -1,7 +1,7 @@
 import classes from '@/components/Card/Card.module.scss';
 import Image from 'next/image';
 import StarRating from '@/components/StarRating/StarRating';
-import { IProduct } from '@/components/Cards/Cards-types';
+import { IProduct } from '@/modules/Cards/Cards-types';
 
 type CartProps = {
   cart: IProduct;

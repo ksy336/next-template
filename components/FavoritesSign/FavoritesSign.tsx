@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import image from '../../public/favourites.svg';
 import redImage from '../../public/heart2.svg';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import styles from './FavoritesSign.module.scss';
-import { IProduct } from '@/components/Cards/Cards-types';
-import openNotification from '@/helper/notification';
+import { IProduct } from '@/modules/Cards/Cards-types';
 import { Context } from '@/store/context';
+import openNotification from "@/src/helpers/notification";
 
 type InitialPropsForSign = {
   product: IProduct;

@@ -1,4 +1,4 @@
-import { IProduct } from '@/components/Cards/Cards-types';
+import { IProduct } from '@/modules/Cards/Cards-types';
 import Image from 'next/image';
 import StarRating from '@/components/StarRating/StarRating';
 import classes from '@/components/Card/Card.module.scss';
@@ -23,7 +23,6 @@ export default function FavoritesProduct({ favoriteProduct }: IFavoritesType) {
         {(favoriteProduct.price * 70).toFixed(2)} ₽{' '}
         <span className={classes.price_single}>/шт.</span>
       </div>
-      {/*<CountProducts cartItems={cartItems} product={cart} setCartItems={setCartItems} />*/}
     </article>
   );
 }

@@ -1,9 +1,11 @@
+import { IProduct } from "@/modules/Cards/Cards-types";
+
 const BASE_URL = process.env.APP_BASE_URL;
 
 class ProductsService {
     async getAllProducts(): Promise<IProduct[]> {
         const response = await fetch(`${BASE_URL}/products`, {
-                method: "GET",
+            method: "GET",
                 headers: {
                     "Content-type": "application/json; charset=UTF-8",
                 }

@@ -1,3 +1,4 @@
+"use client";
 import React, { FC, useContext, useEffect, useState } from "react";
 import Router from 'next/router';
 import { Context } from '@/store/context';
@@ -11,10 +12,13 @@ interface HeaderProps {}
 export const Header: FC<HeaderProps> = () => {
     // @ts-ignore
     const { cartItems, numberOfFavorites, setNumberOfFavourites } = useContext(Context);
+    console.log(numberOfFavorites, setNumberOfFavourites)
     const [numberOfItems, setNumberOfItems] = useState(0);
+    const [favoritesNumber, setFavoritesNumber] = useState(0);
     useEffect(() => {
         setNumberOfItems(cartItems?.length);
-        setNumberOfFavourites(numberOfFavorites);
+        // setNumberOfFavourites(numberOfFavorites);
+        setFavoritesNumber(numberOfFavorites);
     }, [cartItems]);
 
     const handleClick = () => {
@@ -38,7 +42,7 @@ export const Header: FC<HeaderProps> = () => {
                 <Image src={heart} alt="it is heart icon" width="23" height="20" />
               </span>
                       <span className={classes.heart_container}>
-                <span className={classes.heart_number}>{numberOfFavorites}</span>
+                <span className={classes.heart_number}>{favoritesNumber}</span>
               </span>
                   </div>
                   <div className={classes.cart_block} onClick={goToCartPage}>

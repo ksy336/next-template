@@ -3,7 +3,7 @@ import Image from 'next/image';
 import classes from './CountProducts.module.scss';
 import plus from '../../public/+.svg';
 import minus from '../../public/-.svg';
-import { IProduct } from '@/components/Cards/Cards-types';
+import { IProduct } from '@/modules/Cards/Cards-types';
 import { Context } from '@/store/context';
 
 type InitialPropsForCount = {
