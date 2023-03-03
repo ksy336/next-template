@@ -1,21 +1,31 @@
-import { useRouter } from 'next/router';
-import { useContext } from 'react';
+"use client";
+import { useSearchParams } from 'next/navigation';
+import { useContext, useEffect, useState } from "react";
 import { IProduct } from '@/modules/Cards/Cards-types';
 import Cart from '@/components/Cart/Cart';
 import MainLayout from '@/components/Layout/MainLayout';
-import Head from 'next/head';
 import Footer from '@/components/Footer/Footer';
 import FooterBottom from '@/components/FooterBottom/FooterBottom';
-import classes from '@/styles/shopping-cart.module.scss';
+import classes from '../../../src/styles/shopping-cart.module.scss';
 import { Context } from '@/store/context';
 import productsService from "@/modules/Template/api";
 import ButtonInCart from "@/components/ui/ButtonInCart/ButtonInCart";
 import Link from "next/link";
 
 export default async function IdPage() {
-    const router = useRouter();
-    const id = router.query.id;
-    const carts = await productsService.getSingleProduct(id);
+    const searchParams = useSearchParams();
+    const search = searchParams.get('id');
+    const [carts, setCarts] = useState<IProduct[]>([]);
+    useEffect(() => {
+        getSingleCart();
+    }, [search]);
+
+    const getSingleCart = async () => {
+        const data = await productsService.getSingleProduct(search);
+        // @ts-ignore
+        setCarts(() => [data]);
+    };
+
     // @ts-ignore
     const { cartItems } = useContext(Context);
 

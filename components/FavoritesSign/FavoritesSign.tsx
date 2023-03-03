@@ -20,7 +20,6 @@ export default function FavoritesSign({
   // useEffect(() => {
   //   setRedHeart(redHeart);
   // });
-  console.log(redHeart)
   const addToFavorites = () => {
     setRedHeart((prev: any) => [...prev, product.id]);
     setNumberOfFavourites(numberOfFavorites + 1);

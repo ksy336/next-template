@@ -26,7 +26,8 @@ class ProductsService {
             }
         }, );
         try {
-            return await response.json()
+            const data = await response.json();
+            return data;
         } catch(e) {
             console.warn(e);
             throw new Error();

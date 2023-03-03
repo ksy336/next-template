@@ -37,13 +37,13 @@ export default function Card({
   const goToShoppingCart = () => {
       router.push('/shopping-cart');
   };
-  const goToSinglePage = () => {
-      router.push(`products/${product.id}`);
-  };
+  // const goToSinglePage = () => {
+  //     router.push(`products/${product.id}`);
+  // };
 
   return (
     <article>
-      <div onClick={goToSinglePage}>
+      <div>
         {product.rating.count > 300 && (
           <div className={classes.hit}>
             <Image src={hit} alt="it is photo" width="64" height="24" />
