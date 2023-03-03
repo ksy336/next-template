@@ -17,9 +17,10 @@ export default function FavoritesSign({
   const {  numberOfFavorites, setNumberOfFavourites, redHeart, setRedHeart, favoriteProducts, setFavoriteProducts } =
     useContext(Context);
 
-  useEffect(() => {
-    setRedHeart(redHeart);
-  });
+  // useEffect(() => {
+  //   setRedHeart(redHeart);
+  // });
+  console.log(redHeart)
   const addToFavorites = () => {
     setRedHeart((prev: any) => [...prev, product.id]);
     setNumberOfFavourites(numberOfFavorites + 1);

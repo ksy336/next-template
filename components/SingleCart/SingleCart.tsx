@@ -2,7 +2,7 @@ import Image from 'next/image';
 import StarRating from '@/components/StarRating/StarRating';
 import { IProduct } from '@/modules/Cards/Cards-types';
 import deleteIcon from '../../public/delete.svg';
-import classes from '@/components/Card/Card.module.scss';
+import classes from '../../modules/Card/Card.module.scss';
 import CountProducts from '@/components/CountProducts/CountProducts';
 import { useContext } from 'react';
 import { Context } from '@/store/context';

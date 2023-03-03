@@ -1,3 +1,4 @@
+// "use client";
 import React, { useEffect, useState } from 'react';
 import { IProduct } from '@/modules/Cards/Cards-types';
 type ContextType = {
@@ -67,7 +68,7 @@ function ContextProvider({ children }: ContextType) {
     }
   }, [cartItemsIds]);
   useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem('redHeart') as string);
+    const favorites = JSON.parse(localStorage.getItem('favorites') as string);
     if (favorites) {
       setFavoriteProducts(favorites);
     }

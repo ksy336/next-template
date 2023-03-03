@@ -1,6 +1,6 @@
 "use client";
 import { useContext } from 'react';
-import Router from 'next/router';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { IProduct } from '@/modules/Cards/Cards-types';
 import StarRating from '@/components/StarRating/StarRating';
@@ -21,6 +21,7 @@ export default function Card({
 }: InitialPropsForProduct) {
   // @ts-ignore
   const { addToCart, setCartItemsIds, cartItemsIds } = useContext(Context);
+  const router = useRouter();
   const size = 100;
   const addToCartHandler = () => {
     setCartItemsIds((prev: any) => {
@@ -34,10 +35,10 @@ export default function Card({
     }
   };
   const goToShoppingCart = () => {
-    Router.push('/shopping-cart');
+      router.push('/shopping-cart');
   };
   const goToSinglePage = () => {
-    Router.push(`products/${product.id}`);
+      router.push(`products/${product.id}`);
   };
 
   return (

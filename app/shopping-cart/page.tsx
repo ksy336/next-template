@@ -1,31 +1,26 @@
-import Router from 'next/router';
-import { useContext, useMemo } from 'react';
-import classes from '../../styles/shopping-cart.module.scss';
+"use client";
+import React, { useContext, useMemo } from 'react';
+import classes from '../../src/styles/shopping-cart.module.scss';
 import { IProduct } from '@/modules/Cards/Cards-types';
 import SingleCart from '@/components/SingleCart/SingleCart';
 import MainLayout from '@/components/Layout/MainLayout';
 import Footer from '@/components/Footer/Footer';
 import FooterBottom from '@/components/FooterBottom/FooterBottom';
 import { Context } from '@/store/context';
-import ButtonInCart from "@/components/ui/ButtonInCart/ButtonInCart";
+import BackHome from "@/components/BackHome/BackHome";
 
-export default function ShoppingCart() {
+export default function ShoppingCartPage() {
   // @ts-ignore
   const { cartItems } = useContext(Context);
   const totalPrice = useMemo(
     () => cartItems.reduce((prev: any, curr: any) => prev + +curr.totalPrice * 70, 0),
     [cartItems]
   );
-  const goLinkHome = () => {
-    Router.push('/products');
-  };
+
   return (
     <div className={classes.wrapper}>
       <MainLayout>
-        <article className={classes.block_text}>
-          <h1>Корзина</h1>
-          <ButtonInCart onClick={goLinkHome}>Back home</ButtonInCart>
-        </article>
+       <BackHome />
         {cartItems?.length === 0 ? (
           <h1 className={classes.no_items}>Корзина пуста</h1>
         ) : (

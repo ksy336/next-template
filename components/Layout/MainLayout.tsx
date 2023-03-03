@@ -1,11 +1,11 @@
 "use client";
 import { ReactNode, useContext, useEffect, useState } from "react";
 import { Context } from "@/store/context";
-import Router from 'next/router';
+import {useRouter} from 'next/navigation'
 import Image from 'next/image';
 import heart from '../../public/heart.svg';
 import cart from '../../public/cart.svg';
-import classes from "./Header.module.scss";
+import classes from "./MainLayout.module.scss";
 
 interface Props {
   children?: ReactNode;
@@ -13,21 +13,21 @@ interface Props {
 export default function MainLayout({ children }: Props) {
     // @ts-ignore
     const { cartItems, numberOfFavorites, setNumberOfFavourites } = useContext(Context);
+    const router = useRouter()
     const [numberOfItems, setNumberOfItems] = useState(0);
-    console.log(numberOfFavorites, setNumberOfFavourites)
     useEffect(() => {
         setNumberOfItems(cartItems?.length);
-        setNumberOfFavourites(numberOfFavorites);
+        // setNumberOfFavourites(numberOfFavorites);
     }, [cartItems]);
 
     const handleClick = () => {
-        Router.push('/');
+        router.push('/');
     };
     const goToCartPage = () => {
-        Router.push('/shopping-cart');
+        router.push('/shopping-cart');
     };
     const goToFavourites = () => {
-        Router.push('/favorites');
+        router.push('/favorites');
     };
     return (
         <div className={classes.wrapper}>
