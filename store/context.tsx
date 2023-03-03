@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { IProduct } from '@/components/Cards/Cards-types';
 type ContextType = {
   children: React.ReactNode;
 };
@@ -10,10 +11,12 @@ function ContextProvider({ children }: ContextType) {
   const initialStateForFavorites = 0;
   const initialStateForHeart: number[] = [];
   const initialStateForId: number[] = [];
+  const initialFavourites: [] = [];
   const [cartItems, setCartItems] = useState(initialState);
   const [redHeart, setRedHeart] = useState(initialStateForHeart);
   const [numberOfFavorites, setNumberOfFavourites] = useState(initialStateForFavorites);
   const [cartItemsIds, setCartItemsIds] = useState(initialStateForId);
+  const [favoriteProducts, setFavoriteProducts] = useState(initialFavourites);
 
   useEffect(() => {
     const redHeartData = JSON.parse(localStorage.getItem('redHeart') as string);
@@ -63,6 +66,17 @@ function ContextProvider({ children }: ContextType) {
       localStorage.setItem('idArray', JSON.stringify(cartItemsIds));
     }
   }, [cartItemsIds]);
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem('redHeart') as string);
+    if (favorites) {
+      setFavoriteProducts(favorites);
+    }
+  }, []);
+  useEffect(() => {
+    if (favoriteProducts !== initialFavourites) {
+      localStorage.setItem('favorites', JSON.stringify(favoriteProducts));
+    }
+  }, [favoriteProducts]);
   function addToCart(newItem: IProduct) {
     // @ts-ignore
     setCartItems((prev: any) => [...prev, newItem]);
@@ -80,6 +94,8 @@ function ContextProvider({ children }: ContextType) {
         setRedHeart,
         cartItemsIds,
         setCartItemsIds,
+        favoriteProducts,
+        setFavoriteProducts
       }}
     >
       {children}
