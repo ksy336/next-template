@@ -2,6 +2,8 @@ import localFont from "next/font/local";
 import '@/src/styles/global.scss';
 import {Metadata} from "next";
 import ClientProvider from "@/modules/ClientProvider";
+import React from "react";
+import MainLayout from "@/components/Layout/MainLayout";
 
 
 const gilroy = localFont({
@@ -40,11 +42,12 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
         <html lang="en">
         <body>
-        <main className={gilroy.className}>
+        <MainLayout>
+
+        </MainLayout>
             <ClientProvider>
                 {children}
             </ClientProvider>
-        </main>
         </body>
         </html>
     )

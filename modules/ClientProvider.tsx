@@ -7,11 +7,9 @@ import "swiper/scss/pagination";
 import "swiper/scss/navigation";
 function ClientProvider({children}: { children: React.ReactNode }) {
     return (
-        <ThemeProvider enableSystem={false} attribute="class">
-            <AntdThemeProvider>
+        <ContextProvider>
                 {children}
-            </AntdThemeProvider>
-        </ThemeProvider>
+        </ContextProvider>
     )
 }
 
