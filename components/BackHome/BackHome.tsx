@@ -6,7 +6,7 @@ import {useRouter} from 'next/navigation';
 export default function BackHome() {
     const router = useRouter();
     const goLinkHome = () => {
-        router.push('/products');
+        router.push('/');
     };
     return(
         <article className={classes.block_text}>

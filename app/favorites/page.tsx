@@ -16,7 +16,7 @@ export default function FavouritesPage() {
   console.log(favoriteProducts)
   const router = useRouter();
   const goLinkHome = () => {
-    router.push('/products');
+    router.push('/');
   };
   return (
     <div className={classes.wrapper}>
